@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between align-items-center compoHead">
+    <h1>{{ title }}</h1>
+    <button type="button" class="btn btn-success">Add New Post</button>
+</div>
+
+<div *ngIf="posts" class="row">
+  	<div *ngFor="let post of posts | async" class="col-sm-4">
+    	<div class="card">
+			<div class="card-header">
+				ID: {{ post.id }}
+			</div>
+      		<div class="card-body">
+        		<h5 class="card-title">{{ post.title }}.</h5>
+        		<p class="card-text">{{ post.body }}.</p>
+      		</div>
+      		<div class="card-footer">
+                <button type="button" class="btn btn-danger btn-sm">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-primary btn-sm">
+                    Edit
+                </button>
+      		</div>
+    	</div>
+  	</div>
+</div>
