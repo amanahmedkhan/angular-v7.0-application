@@ -1,0 +1,12 @@
+<a routerLink = "/">< back</a>
+
+<form id="newPost" name="newPostForm" #newPostData="ngForm" (ngSubmit)="addNewPost(newPostData.value)">
+	<label>ID:</label> <input type="text" name="id" id="id" placeholder="id" ngModel>	
+	<label>User ID:</label> <input type="text" name="userid" id="userid" placeholder="userid" ngModel>
+  <label>Title:</label> <input type="text" name="title" id="title" placeholder="title" ngModel>
+  <label>Body:</label> <input type="text" name="body" id="body" placeholder="body" ngModel>
+  <input type="submit" value="Submit New Post">
+</form>
+
+<br>
+<h3 *ngIf = "isAdded"> {{confirmationString}} </h3>
