@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { PostService } from './../post.service';
 
 @Component({
   selector: 'app-post',
@@ -6,12 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+    constructor(private postService: PostService) {}
+
   	title = 'Post List';
-    @Input() posts: Array;
 
     deletePost = function(id) {
         if(confirm ("Are you sure?")) {
-            this.posts = this.posts.filter(post => post.id !== id);
+            this.postService.posts = this.postService.posts.filter(post => post.id !== id);
         }
     }
 }
