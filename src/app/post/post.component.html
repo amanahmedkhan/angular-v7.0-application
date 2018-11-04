@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center compoHead">
     <h1>{{ title }}</h1>
-    <button routerLink = "/addnewpost" type="button" class="btn btn-success">Add New Post</button>
+    <button (click)="addPostModal()" type="button" class="btn btn-success">Add New Post</button>
 </div>
 
 <div class="row">
@@ -17,8 +17,8 @@
                 <button (click) = "deletePost(post.id)" type="button" class="btn btn-danger btn-sm">
                     <a>Delete</a>
                 </button>
-                <button type="button" class="btn btn-primary btn-sm">
-                    Edit
+                <button (click)="updatePostModal()" type="button" class="btn btn-primary btn-sm">
+                    <a>Edit</a>
                 </button>
       		</div>
     	</div>

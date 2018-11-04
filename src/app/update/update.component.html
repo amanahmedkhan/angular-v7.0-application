@@ -1,4 +1,4 @@
-<form id="newPost" name="newPostForm" #newPostData="ngForm" (ngSubmit)="addNewPost(newPostData.value)">
+<form id="newPost" name="newPostForm" #newPostData="ngForm" (ngSubmit)="editPost(newPostData.value)">
 	<div class="form-group">	
 		<label>User ID</label>
 		<input type="text" class="form-control" name="userid" id="userid" placeholder="Please Enter User ID:" ngModel>
@@ -11,5 +11,5 @@
 		<label>Body</label>
 		<textarea type="text" name="body" class="form-control" id="body" rows="3" placeholder="Please Enter Body:" ngModel></textarea>
 	</div>
-	<input type="submit" class="btn btn-primary" value="Add Post">
+	<input type="submit" class="btn btn-success" value="Update">
 </form>

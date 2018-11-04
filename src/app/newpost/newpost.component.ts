@@ -8,9 +8,7 @@ import { PostService } from './../post.service';
 })
 export class NewpostComponent {
     constructor(private postService: PostService) {}
-
-    confirmationString:string = "New Post Has been added"
-    inAdded: boolean = false;
+    
     newPost:object = {};
 
     addNewPost = function({ userId, title, body }) {
