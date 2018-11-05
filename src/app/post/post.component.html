@@ -2,25 +2,24 @@
     <h1>{{ title }}</h1>
     <button (click)="addPostModal()" type="button" class="btn btn-success">Add New Post</button>
 </div>
-
 <div class="row">
-  	<div *ngFor="let post of postService.posts" class="col-sm-4">
-    	<div class="card">
-			<div class="card-header">
-				ID: {{ post.id }}
-			</div>
-      		<div class="card-body">
-        		<h5 class="card-title">{{ post.title }}.</h5>
-        		<p class="card-text">{{ post.body }}.</p>
-      		</div>
-      		<div class="card-footer">
-                <button (click) = "deletePost(post.id)" type="button" class="btn btn-danger btn-sm">
-                    <a>Delete</a>
+    <div *ngFor="let post of postService.posts" class="col-sm-4">
+        <div class="card">
+            <div class="card-header">
+                ID: {{ post.id }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}.</h5>
+                <p class="card-text">{{ post.body }}.</p>
+            </div>
+            <div class="card-footer">
+                <button (click)="deletePost(post.id)" type="button" class="btn btn-danger btn-sm">
+                    Delete
                 </button>
-                <button (click)="updatePostModal()" type="button" class="btn btn-primary btn-sm">
-                    <a>Edit</a>
+                <button (click)="postService.getPostById(post.id); updatePostModal()" type="button" class="btn btn-primary btn-sm">
+                    Edit
                 </button>
-      		</div>
-    	</div>
-  	</div>
+            </div>
+        </div>
+    </div>
 </div>

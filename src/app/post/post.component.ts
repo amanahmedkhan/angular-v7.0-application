@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from './../post.service';
 
-import {NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './../modal/modal.component';
 import { NewpostComponent } from './../newpost/newpost.component';
 import { UpdateComponent } from './../update/update.component';

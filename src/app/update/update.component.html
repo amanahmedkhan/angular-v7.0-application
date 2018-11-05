@@ -1,15 +1,15 @@
-<form id="newPost" name="newPostForm" #newPostData="ngForm" (ngSubmit)="editPost(newPostData.value)">
+<form #updatePostData="ngForm" (ngSubmit)="updatePost(updatePostData.value, postService.postById.id)">
 	<div class="form-group">	
 		<label>User ID</label>
-		<input type="text" class="form-control" name="userid" id="userid" placeholder="Please Enter User ID:" ngModel>
+		<input type="text" class="form-control" name="userid" id="userid" placeholder="Please Enter User ID:" value="{{postService.postById.userId}}" [(ngModel)]="updatePostData.userId">
 	</div>
 	<div class="form-group">
 		<label>Title</label>
-		<input type="text" class="form-control" name="title" id="title" placeholder="Please Enter Title:" ngModel>
+		<input type="text" class="form-control" name="title" id="title" placeholder="Please Enter Title:" value="{{postService.postById.title}}" [(ngModel)]="updatePostData.title">
 	</div>
 	<div class="form-group">
 		<label>Body</label>
-		<textarea type="text" name="body" class="form-control" id="body" rows="3" placeholder="Please Enter Body:" ngModel></textarea>
+		<textarea type="text" name="body" class="form-control" id="body" rows="3" placeholder="Please Enter Body:" value="{{postService.postById.body}}" [(ngModel)]="updatePostData.body"></textarea>
 	</div>
 	<input type="submit" class="btn btn-success" value="Update">
 </form>

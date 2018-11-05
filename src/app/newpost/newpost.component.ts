@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { PostService } from './../post.service';
 
 @Component({
-  selector: 'app-newpost',
-  templateUrl: './newpost.component.html',
-  styleUrls: ['./newpost.component.scss']
+    selector: 'app-newpost',
+    templateUrl: './newpost.component.html',
+    styleUrls: ['./newpost.component.scss']
 })
 export class NewpostComponent {
     constructor(private postService: PostService) {}
-    
-    newPost:object = {};
 
     addNewPost = function({ userId, title, body }) {
         const lastItem = this.postService.posts[this.postService.posts.length-1];
@@ -20,5 +18,4 @@ export class NewpostComponent {
             body
         });
     }
-
 }
