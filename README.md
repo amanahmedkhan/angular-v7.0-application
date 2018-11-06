@@ -4,7 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 * `npm install`
-* `npm install webpack-dev-server -g`
 
 ## Development server
 
