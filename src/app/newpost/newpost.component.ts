@@ -30,6 +30,6 @@ export class NewpostComponent {
     // Validation Form Function
     model = new Validation(0, '', '',);
     validForm(){
-        this.model = new Validation(0, '', '');
+        this.model = new Validation(42, '', '');
     }
 }

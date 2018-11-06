@@ -10,6 +10,8 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NewpostComponent } from './newpost/newpost.component';
 import { UpdateComponent } from './update/update.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalwrapComponent } from './modalwrap/modalwrap.component';
+import { ModalupdateComponent } from './modalupdate/modalupdate.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +19,9 @@ import { ModalComponent } from './modal/modal.component';
         PostComponent,
         NewpostComponent,
         UpdateComponent,
-        ModalComponent
+        ModalComponent,
+        ModalwrapComponent,
+        ModalupdateComponent
     ],
     imports: [
         BrowserModule,
@@ -31,8 +35,8 @@ import { ModalComponent } from './modal/modal.component';
     ],
     bootstrap: [AppComponent],
     entryComponents: [
-        NewpostComponent,
-        UpdateComponent
+        ModalwrapComponent,
+        ModalupdateComponent
     ]
 })
 export class AppModule { }

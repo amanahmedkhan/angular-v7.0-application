@@ -3,8 +3,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'app-modal',
-	templateUrl: './modal.component.html',
-	styleUrls: ['./modal.component.scss']
+	templateUrl: './modal.component.html'
 })
 
 export class ModalComponent {

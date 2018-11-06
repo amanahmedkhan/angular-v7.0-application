@@ -4,8 +4,8 @@
 <form #newPostData="ngForm" (ngSubmit)="addNewPost(newPostData.value)">
 	<div class="form-group">	
 		<label>User ID</label>
-		<input type="text" class="form-control" name="userid" required [(ngModel)]="model.userid" id="userid" #userid="ngModel" placeholder="Please Enter User ID:">
-		<div [hidden]="userid.valid || userid.pristine" class="alert alert-danger">
+		<input type="number" class="form-control" name="userId" required [(ngModel)]="model.userId" id="userId" #userId="ngModel" placeholder="Please Enter User ID:">
+		<div [hidden]="userId.valid || userId.pristine" class="alert alert-danger">
 			User ID is required
 		</div>
 	</div>

@@ -1,11 +1,8 @@
-<div *ngIf="isAdded" class="alert alert-success" role="alert">
-	{{ confirmationString }}
-</div>
 <form #updatePostData="ngForm" (ngSubmit)="updatePost(updatePostData.value, postService.postById.id)">
 	<div class="form-group">	
 		<label>User ID</label>
-		<input type="text" class="form-control" name="userid" required id="userid" #userid="ngModel" placeholder="Please Enter User ID:" value="{{postService.postById.userId}}" [(ngModel)]="updatePostData.userId">
-		<div [hidden]="userid.valid || userid.pristine" class="alert alert-danger">
+		<input type="number" class="form-control" name="userId" required id="userId" #userId="ngModel" placeholder="Please Enter User ID:" value="{{postService.postById.userId}}" [(ngModel)]="updatePostData.userId">
+		<div [hidden]="userId.valid || userId.pristine" class="alert alert-danger">
 			User ID is required
 		</div>
 	</div>
@@ -30,8 +27,8 @@
 	<h5>Current Post Data</h5>
 	<ul>
 		<li><span>User ID:</span> {{postService.postById.userId}}</li>
-		<li><span>Title</span> {{postService.postById.title}}</li>
-		<li><span>Body</span> {{postService.postById.body}}</li>
+		<li><span>Title:</span> {{postService.postById.title}}</li>
+		<li><span>Body:</span> {{postService.postById.body}}</li>
 	</ul>
 </div>
 

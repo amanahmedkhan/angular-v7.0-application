@@ -3,8 +3,8 @@ import { PostService } from './../post.service';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './../modal/modal.component';
-import { NewpostComponent } from './../newpost/newpost.component';
-import { UpdateComponent } from './../update/update.component';
+import { ModalupdateComponent } from './../modalupdate/modalupdate.component';
+import { ModalwrapComponent } from './../modalwrap/modalwrap.component';
 
 @Component({
     selector: 'app-post',
@@ -25,13 +25,13 @@ export class PostComponent {
 
     // Modal for Add Post
     addPostModal() {
-        const modalRef = this.modalService.open(NewpostComponent);
+        const modalRef = this.modalService.open(ModalwrapComponent);
         modalRef.componentInstance.title = 'Add New Post';
     }
 
-    // Modal for Update Post
+    //Modal for Update Post
     updatePostModal() {
-        const modalRef = this.modalService.open(UpdateComponent);
+        const modalRef = this.modalService.open(ModalupdateComponent);
         modalRef.componentInstance.title = 'Update Post';
     }
 }
