@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from './../post.service';
+import { Validation }    from '../Validation';
 
 @Component({
 	selector: 'app-update',
@@ -10,6 +11,10 @@ export class UpdateComponent {
 
 	constructor(private postService: PostService) {}
 
+	// Update Post Function
+	submitted = false;
+    confirmationString:string = "Successfully post has been updated";
+    isAdded: boolean = false;
 	updatePost = (updatedPost, postId) => {
 		const postToUpdate = this.postService.posts.find(post => post.id === postId);
 		const post = Object.assign(postToUpdate, {
@@ -22,10 +27,17 @@ export class UpdateComponent {
 		this.postService.posts = [...this.postService.posts, post];
 		return this.postService.posts;
 
+		this.submitted = true;
+        this.isAdded = true;
 	}
+
+	// Validation Form Function
+    model = new Validation(0, '', '',);
+    validForm(){
+        this.model = new Validation(0, '', '');
+    }
 
 	ngOnInit() {
-	    console.log(this);
+	    //console.log(this);
 	}
-
 }

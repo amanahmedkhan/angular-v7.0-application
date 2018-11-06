@@ -1,15 +1,27 @@
+<div *ngIf="isAdded" class="alert alert-success" role="alert">
+	{{ confirmationString }}
+</div>	
 <form #newPostData="ngForm" (ngSubmit)="addNewPost(newPostData.value)">
 	<div class="form-group">	
 		<label>User ID</label>
-		<input type="text" class="form-control" name="userid" id="userid" placeholder="Please Enter User ID:" ngModel>
+		<input type="text" class="form-control" name="userid" required [(ngModel)]="model.userid" id="userid" #userid="ngModel" placeholder="Please Enter User ID:">
+		<div [hidden]="userid.valid || userid.pristine" class="alert alert-danger">
+			User ID is required
+		</div>
 	</div>
 	<div class="form-group">
 		<label>Title</label>
-		<input type="text" class="form-control" name="title" id="title" placeholder="Please Enter Title:" ngModel>
+		<input type="text" class="form-control" name="title" required [(ngModel)]="model.title" id="title" #title="ngModel" placeholder="Please Enter Title:">
+		<div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+			Title is required
+		</div>
 	</div>
 	<div class="form-group">
 		<label>Body</label>
-		<textarea type="text" name="body" class="form-control" id="body" rows="3" placeholder="Please Enter Body:" ngModel></textarea>
+		<textarea type="text" name="body" required [(ngModel)]="model.body" class="form-control" id="body" #body="ngModel" rows="3" placeholder="Please Enter Body:"></textarea>
+		<div [hidden]="body.valid || body.pristine" class="alert alert-danger">
+			Body is required
+		</div>
 	</div>
-	<input type="submit" class="btn btn-primary" value="Add Post">
+	<input type="submit" class="btn btn-primary" value="Add Post" [disabled]="!newPostData.form.valid">
 </form>
